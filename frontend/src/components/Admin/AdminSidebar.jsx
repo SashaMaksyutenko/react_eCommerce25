@@ -7,10 +7,16 @@ import {
   FaSignOutAlt,
   FaUser
 } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
+import { logout } from '../../redux/slices/authSlice'
+import { clearCart } from '../../redux/slices/cartSlice'
 const AdminSidebar = () => {
   const navigate = useNavigate()
+  const dispatch= useDispatch()
   const handleLogout = () => {
     // Handle logout logic here
+    dispatch(logout())
+    dispatch(clearCart())
     navigate('/')
     console.log('Logged out')
   }
@@ -80,5 +86,4 @@ const AdminSidebar = () => {
     </div>
   )
 }
-
 export default AdminSidebar

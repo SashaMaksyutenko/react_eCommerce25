@@ -15,7 +15,7 @@ router.get('/', protect, admin, async (req, res) => {
 // @route PUT /api/admin/orders/:id. Update order status (Admin only). Access - Private
 router.put('/:id', protect, admin, async (req, res) => {
   try {
-    const order = await Order.findById(req.params.id)
+    const order = await Order.findById(req.params.id).populate('user', 'name email')
     if (order) {
       order.status = req.body.status || order.status
       order.isDelivered =

@@ -1,39 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
+import { fetchOrderDetails } from '../redux/slices/orderSlice'
 const OrderDetailsPage = () => {
   const { id } = useParams()
-  const [orderDetails, setOrderDetails] = useState(null)
+  const dispatch = useDispatch()
+  const { orderDetails, loading, error } = useSelector(state => state.orders)
   useEffect(() => {
-    const mockOrderDetails = {
-      _id: id,
-      createdAt: new Date(),
-      isPaid: true,
-      isDelivered: true,
-      paymentMethod: 'PayPal',
-      shippingMethod: 'Standard',
-      shippingAddress: {
-        city: 'New York',
-        country: 'USA'
-      },
-      orderItems: [
-        {
-          productId: '1',
-          name: 'Jacket',
-          price: 120,
-          quantity: 1,
-          image: 'https://picsum.photos/500/500?random=1'
-        },
-        {
-          productId: '2',
-          name: 'Shirt',
-          price: 150,
-          quantity: 2,
-          image: 'https://picsum.photos/500/500?random=2'
-        }
-      ]
-    }
-    setOrderDetails(mockOrderDetails)
-  }, [id])
+    dispatch(fetchOrderDetails(id))
+  }, [dispatch, id])
+  if (loading) {
+    return <p className='text-center'>Loading...</p>
+  }
+  if (error) {
+    return <p className='text-center'>Error: {error}</p>
+  }
   return (
     <div className='max-w-7xl mx-auto p-4 sm:p-6 '>
       <h2 className='text-2xl md:text-3xl font-bold mb-6'>Order Details</h2>

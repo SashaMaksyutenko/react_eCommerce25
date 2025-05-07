@@ -18,11 +18,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=39",
+        url: "https://losangelesapparel.net/cdn/shop/products/RCP402-BLUE-2-s.jpg?v=1657030224",
         altText: "Classic Oxford Button-Down Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=40",
+        url: "https://cdn11.bigcommerce.com/s-axz3gp0dm3/images/stencil/720w/products/4116/19054/Mens_Blue_Cotton_Oxford_Shirt__64617.1647442328.jpg",
         altText: "Classic Oxford Button-Down Shirt Back View",
       },
     ],
@@ -46,11 +46,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=41",
+        url: "https://www.vincenzo-boretti.com/vbmedia/images/00080x00102/10010784-1.jpg",
         altText: "Slim-Fit Stretch Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=42",
+        url: "https://www.vincenzo-boretti.com/vbmedia/images/00080x00102/10010784-2.jpg",
         altText: "Slim-Fit Stretch Shirt Back View",
       },
     ],
@@ -74,11 +74,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=43",
+        url: "https://kiton.com/cdn/shop/files/UCCH0903903_2_29d83067-fa33-43bb-bc08-f4147bee4de6.jpg?v=1734338760&width=1100",
         altText: "Casual Denim Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=44",
+        url: "https://kiton.com/cdn/shop/files/UCCH0903903_1_e4bd1a36-4341-4282-8bc6-606f6d2220d3.jpg?v=1734338761&width=1100",
         altText: "Casual Denim Shirt Back View",
       },
     ],
@@ -102,11 +102,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=45",
+        url: "https://d1pdzcnm6xgxlz.cloudfront.net/tops/8905875188537-13.jpg",
         altText: "Printed Resort Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=1",
+        url: "https://d1pdzcnm6xgxlz.cloudfront.net/tops/8905875188537-9.jpg",
         altText: "Printed Resort Shirt Back View",
       },
     ],
@@ -130,11 +130,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=47",
+        url: "https://www.ovsfashion.com/dw/image/v2/BKML_PRD/on/demandware.static/-/Sites-ovs-master/default/dwb2b27ba7/media/products/002/195/002195377_F.jpg?sw=1571&sh=2095&q=60",
         altText: "Slim-Fit Easy-Iron Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=2",
+        url: "https://www.ovsfashion.com/dw/image/v2/BKML_PRD/on/demandware.static/-/Sites-ovs-master/default/dw6284d4ba/media/products/002/195/002195377_D1.jpg?sw=1571&sh=2095&q=60",
         altText: "Slim-Fit Easy-Iron Shirt Front View",
       },
     ],
@@ -158,11 +158,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=3",
+        url: "https://i.ebayimg.com/images/g/R0kAAOSw7ttn--NW/s-l140.webp",
         altText: "Polo T-Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=4",
+        url: "https://i.ebayimg.com/images/g/O1AAAOSwpu5n--ON/s-l140.webp",
         altText: "Polo T-Shirt Back View",
       },
     ],
@@ -361,6 +361,9 @@ const products = [
     rating: 4.6,
     numReviews: 22,
   },
+
+
+  
   {
     name: "Chino Pants",
     description:
@@ -986,5 +989,4 @@ const products = [
     numReviews: 22,
   },
 ];
-
 module.exports = products;

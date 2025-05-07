@@ -1,19 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link} from 'react-router-dom'
+import {
+  deleteProduct,
+  fetchAdminProducts
+} from '../../redux/slices/adminProductSlice'
 const ProductManagement = () => {
-  const products = [
-    {
-      _id: 111,
-      name: 'Shirt',
-      price: 120,
-      sku: '123456789'
-    }
-  ]
+  const dispatch = useDispatch()
+  const { products, loading, error } = useSelector(state => state.adminProducts)
+  useEffect(() => {
+    dispatch(fetchAdminProducts())
+  }, [dispatch])
   const handleDelete = id => {
     if (window.confirm('Are you sure you want to delete the product?')) {
-      console.log('delete product with id:', id)
+      dispatch(deleteProduct(id))
     }
+  }
+  if (loading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p className='text-red-500'>Error: {error}</p>
   }
   return (
     <div className='max-w-7xl mx-auto p-6'>
@@ -47,14 +54,19 @@ const ProductManagement = () => {
                     >
                       Edit
                     </Link>
-                    <button onClick={() => handleDelete(product._id)} className='bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600'>Delete</button>
+                    <button
+                      onClick={() => handleDelete(product._id)}
+                      className='bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600'
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
                 <td colSpan={4} className='p-4 text-center text-gray-500'>
-                    No Products found.
+                  No Products found.
                 </td>
               </tr>
             )}
